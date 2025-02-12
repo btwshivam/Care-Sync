@@ -1,0 +1,190 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum appointType {
+  IPD
+  OPD
+}
+
+enum gender {
+  MALE
+  FEMALE
+  TRANS
+}
+
+model hospital {
+  id          Int            @id @default(autoincrement())
+  name        String
+  services    String[]
+  adminPass   String
+  doctorPass  String
+  receptionistPass String
+  inventoryPass String
+  coordinates Decimal[]      @db.Decimal(9, 6)
+  departments department[]
+  admin       admin[]
+  doctors     doctor[]
+  patients    patient[]
+  receptionists  receptionist[]
+  tickets     ticket[]
+  inventoryman inventoryman[]
+  inventory   inventory[]
+  queues      queue[]
+  ward        ward[]
+}
+
+model department {
+  id          Int            @id @default(autoincrement())
+  name        String
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+  doctors     doctor[]
+}
+
+model admin {
+  id          Int            @id @default(autoincrement())
+  name        String
+  email       String         @unique
+  password    String
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+}
+
+model doctor {
+  id          Int            @id @default(autoincrement())
+  name        String
+  email       String         @unique
+  password    String
+  departmentId Int
+  department   department             @relation(fields: [departmentId], references: [id])
+  specialty   String
+  descripton  String?
+  workinghrs  String?
+  workingdays String[]
+  averageTreatmentTime Int   @default(5) // Average treatment time in minutes
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+  queues      queue[]
+  futureReferences futureReference[]
+}
+
+model patient {
+  id          Int            @id @default(autoincrement())
+  profilePicture String?
+  name        String
+  email       String         @unique
+  gender      gender         @default(MALE)
+  age         Int
+  bloodtype   String?
+  contact     String
+  password    String
+  ticket      ticket[]
+  hospitalId  Int?
+  hospital    hospital?      @relation(fields: [hospitalId], references: [id])
+  futureReferences futureReference[]
+}
+
+model receptionist {
+  id          Int            @id @default(autoincrement())
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+  name        String
+  email       String         @unique
+  password    String
+  timestamp   DateTime       @db.Timestamptz() @default(now())
+}
+
+model ticket {
+  id          Int            @id @default(autoincrement())
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+  patientId   Int?
+  patient     patient?       @relation(fields: [patientId], references: [id])
+  name        String
+  age         Int
+  email       String?         @unique
+  bloodtype   String?
+  contact     String?
+  gender       gender         @default(MALE)
+  appointType  appointType
+  appointmentDate DateTime   @db.Date
+  doctorId    Int?
+  queue       queue[]
+  approved    Boolean        @default(false) 
+  wardId      Int?           // Reference to the ward assigned to the patient
+  ward        ward?          @relation(fields: [wardId], references: [id])
+  bed         Int?
+}
+
+model inventoryman {
+  id          Int            @id @default(autoincrement())
+  name        String
+  email       String         @unique
+  password    String
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+}
+
+model inventory {
+  id          Int        @id @default(autoincrement())
+  hospitalId  Int
+  hospital    hospital   @relation(fields: [hospitalId], references: [id])
+  name        String
+  quantity    Float
+  price       Float
+  mfgdate     DateTime    @db.Date
+  expDate     DateTime    @db.Date
+  category    String
+  supplier    String?     // Supplier field added
+  description String?     // Optional description field
+  orderdate   DateTime    @db.Date
+  orderedtime String
+  expecteddeliverdate DateTime @db.Date
+}
+
+
+model queue {
+  id          Int            @id @default(autoincrement())
+  hospitalId  Int
+  hospital    hospital       @relation(fields: [hospitalId], references: [id])
+  doctorId    Int
+  doctor      doctor         @relation(fields: [doctorId], references: [id])
+  position    Int?            // Patient's position in the queue
+  appointmentDate DateTime   @db.Date
+  pending     Boolean        @default(true)
+  ticketId    Int
+  ticket      ticket         @relation(fields: [ticketId], references: [id])
+}
+
+model futureReference {
+  id          Int            @id @default(autoincrement())
+  doctorId    Int
+  doctor      doctor         @relation(fields: [doctorId], references: [id])
+  patientId   Int
+  patient     patient        @relation(fields: [patientId], references: [id])
+  futureAppointmentDate DateTime @db.Date
+  notes       String?
+}
+
+model ward {
+  id             Int      @id @default(autoincrement())
+  hospitalId     Int
+  hospital       hospital @relation(fields: [hospitalId], references: [id])
+  name           String   // Name of the ward (e.g., "ICU", "General Ward")
+  totalBeds      Int      // Total number of beds in the ward
+  occupiedBeds   Int      // Number of beds currently occupied
+  availableBeds  Int      // Number of beds currently available
+  tickets        ticket[] // Relation to the ticket model
+}
