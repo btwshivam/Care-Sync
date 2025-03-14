@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../components/Sidebar";
-
-import { Routes, Route } from "react-router-dom";
+import SimpleLogoutButton from "../components/SimpleLogoutButton";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import AdminDashboard from "../pages/Administrator/AdminDashboard";
 import AdminWard from "../pages/Administrator/AdminWard";
 import AdminOPD from "../pages/Administrator/AdminOPD";
@@ -10,6 +10,19 @@ import AdminProfile from "../pages/Administrator/AdminProfile";
 import AdminQueue from "../pages/Administrator/AdminQueue";
 
 const AdminLayout: React.FC = () => {
+  const navigate = useNavigate();
+
+  // Check if user is authenticated and has the correct role
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userString = localStorage.getItem('user');
+    const role = localStorage.getItem('role');
+    
+    if (!token || !userString || role !== 'Admin') {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   const adminLinks = [
     { name: "Dashboard", path: "/admin/dashboard" },
     { name: "Ward", path: "/admin/ward" },
@@ -40,9 +53,10 @@ const AdminLayout: React.FC = () => {
   ];
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <Sidebar links={adminLinks} />
       <div className="flex-1 overflow-y-scroll h-screen pt-10 sm:pt-0 bg-gray-900">
+        <SimpleLogoutButton />
         <Routes>
           <Route path="dashboard" element={<AdminDashboard title="Admin Dashboard" />}/>
           <Route path="ward" element={<AdminWard patients={patientDummy} />} />
