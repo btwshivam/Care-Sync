@@ -1,4 +1,18 @@
-# 🏥✨ CareSync - Smart Hospital Management System ✨🏥
+# 🏥CareSync - Smart Hospital Management System🏥
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![React](https://img.shields.io/badge/React-18.0%2B-blue?logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![WebSocket](https://img.shields.io/badge/WebSocket-Enabled-brightgreen?logo=websocket)](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+[![Recoil](https://img.shields.io/badge/Recoil-State%20Management-blueviolet?logo=react)](https://recoiljs.org/)
+[![Axios](https://img.shields.io/badge/Axios-HTTP%20Client-yellowgreen?logo=axios)](https://axios-http.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-brightgreen?logo=node.js)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-4.17%2B-black?logo=express)](https://expressjs.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14.0%2B-blue?logo=postgresql)](https://www.postgresql.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM%20for%20Databases-lightblue?logo=prisma)](https://www.prisma.io/)
+[![Socket.io](https://img.shields.io/badge/Socket.io-4.5.1-black?logo=socket.io)](https://socket.io/)
+[![Flask](https://img.shields.io/badge/Flask-Python%20Microframework-lightgray?logo=flask)](https://flask.palletsprojects.com/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-blue?logo=pandas)](https://pandas.pydata.org/)
+
 **🚀 Revolutionizing Healthcare - Your all-in-one solution for managing OPD queues, real-time bed tracking, and inventory management.**
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 ## 🌟 Why CareSync?
