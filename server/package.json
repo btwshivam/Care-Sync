@@ -2,11 +2,13 @@
   "name": "caresync-backend",
   "version": "1.0.0",
   "description": "Backend server and Database",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "migrate": "npx prisma migrate dev",
+    "db:setup": "npx prisma generate && npx prisma migrate deploy",
     "dev": "nodemon --exec ts-node index.ts",
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

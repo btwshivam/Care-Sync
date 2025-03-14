@@ -21,7 +21,7 @@ export const PatientRequest = z.object({
     password: z.string().min(8).max(100),
     role: z.literal("Patient"),
     age: z.number(),
-    bloodType: z.string().optional(),
+    bloodtype: z.string().optional(),
     contact: z.string()
 });
 
