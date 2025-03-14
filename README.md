@@ -94,8 +94,34 @@ cp .env.example .env
 # Start development server
 npm run dev
 ```
+### 3. Database Setup
 
-### 3. Frontend Setup
+1. Install PostgreSQL and create a database named `care_sync`:
+   ```
+   CREATE DATABASE care_sync;
+   ```
+
+2. Create a PostgreSQL user (or use the default postgres user):
+   ```
+   CREATE USER postgres WITH PASSWORD 'postgres';
+   GRANT ALL PRIVILEGES ON DATABASE care_sync TO postgres;
+   ```
+
+
+### 4. Update the `.env` file with your database credentials:
+   ```
+   JWT_SECRET = "secret"
+   PORT = "3000"
+   DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/care_sync"
+   ```
+
+### 5. Set up the database schema:
+   ```
+   npm run migrate
+   npm run db:setup
+   ```
+
+### 6. Frontend Setup
 ```bash
 # Navigate to client directory
 cd ../client
@@ -110,15 +136,8 @@ npm run dev
 
 ### ⚠️ Troubleshooting
 **Common Issues**
-1. Database Connection Issues
-- Ensure PostgreSQL is running locally or on the specified server.
-- Double-check your PostgreSQL connection string in the .env file to ensure it’s correct.
-- Verify that your firewall or network settings are not blocking the connection.
-2. Node Module Issues
-- Try deleting node_modules and package-lock.json.
-- Run npm install again.
-- Port Conflicts
-- Check if ports 5137, 3001 and 3000 are available.
+- If you encounter database connection issues, verify your PostgreSQL credentials and ensure the database is running.
+- For client-server connection issues, check that both applications are running and the backend URL is correctly configured in `client/backendroute.ts`.
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ### 📜 License
