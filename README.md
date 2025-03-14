@@ -36,7 +36,7 @@
 Stock Monitoring: Track inventory levels of medicines and consumables.
 - Automated Alerts: Receive notifications when stock is low or nearing expiry.
 - Usage Analytics: Generate reports on inventory usage, helping with future stock forecasting.
-###🔐 5. User Roles and Authentication
+## #🔐 5. User Roles and Authentication
 - Role-Based Access: Different roles for Doctors, Patients, Receptionists, and Admins.
 - Secure Authentication: Secure login and data encryption for all users.
 - Admin Control: Admins can manage user roles and system settings.
