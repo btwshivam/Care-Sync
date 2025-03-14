@@ -13,11 +13,15 @@
 [![Flask](https://img.shields.io/badge/Flask-Python%20Microframework-lightgray?logo=flask)](https://flask.palletsprojects.com/)
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-blue?logo=pandas)](https://pandas.pydata.org/)
 
+![ReadMeBanner](https://github.com/user-attachments/assets/f58009fb-d455-4da7-aedc-155c42aa39a7)
 **🚀 Revolutionizing Healthcare - Your all-in-one solution for managing OPD queues, real-time bed tracking, and inventory management.**
+
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## 🌟 Why CareSync?
 ** Imagine a world where patients never wait endlessly in OPD queues, hospitals always know their bed availability in real-time, and inventory never runs out of essential supplies. CareSync makes this a reality by integrating AI, real-time data, and predictive analytics to create a seamless experience for patients and healthcare providers.**
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## 🚀 Key Features
 ### 🏥 1. OPD Queue Management
 - Real-time Tracking: Monitor patient queues and track waiting times.
@@ -36,14 +40,15 @@
 Stock Monitoring: Track inventory levels of medicines and consumables.
 - Automated Alerts: Receive notifications when stock is low or nearing expiry.
 - Usage Analytics: Generate reports on inventory usage, helping with future stock forecasting.
-## #🔐 5. User Roles and Authentication
+### 🔐 5. User Roles and Authentication
 - Role-Based Access: Different roles for Doctors, Patients, Receptionists, and Admins.
 - Secure Authentication: Secure login and data encryption for all users.
 - Admin Control: Admins can manage user roles and system settings.
+
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-# 🛠️ Tech Stack
-## Frontend 🖥️
+## 🛠️ Tech Stack
+### Frontend 🖥️
 - React.js
 - TypeScript
 - WebSocket
@@ -51,7 +56,7 @@ Stock Monitoring: Track inventory levels of medicines and consumables.
 - React Router
 - Axios
 - CSS3 / Tailwind
-## Backend 💻
+### Backend 💻
 - Node.js
 - Express.js
 - PostgreSQL
@@ -60,12 +65,13 @@ Stock Monitoring: Track inventory levels of medicines and consumables.
 - Zod
 - RESTful APIs
 - JWT
-## AI/ML 🤖
+### AI/ML 🤖
 - Flask
 - Pandas
   
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-# 🛠️ Installation Guide
+  
+## 🛠️ Installation Guide
 🧩 Setup Steps
 ### 1. Clone the Repository
 ```bash
@@ -105,25 +111,21 @@ npm run dev
 ```
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## ⚠️ Troubleshooting
-- Common Issues
-- Database Connection Issues
-
+### ⚠️ Troubleshooting
+**Common Issues**
+1. Database Connection Issues
 - Ensure PostgreSQL is running locally or on the specified server.
 - Double-check your PostgreSQL connection string in the .env file to ensure it’s correct.
 - Verify that your firewall or network settings are not blocking the connection.
--  Node Module Issues
-
+2. Node Module Issues
 - Try deleting node_modules and package-lock.json.
 - Run npm install again.
 - Port Conflicts
 - Check if ports 5137, 3001 and 3000 are available.
-
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-## 📜 License
+### 📜 License
 ### This project is licensed under the  [MIT License](LICENSE).
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
 ### ❤️ If you find this project helpful, please give us a ⭐ and share it with others!
