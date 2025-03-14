@@ -15,11 +15,10 @@
 
 ![ReadMeBanner](https://github.com/user-attachments/assets/f58009fb-d455-4da7-aedc-155c42aa39a7)
 **🚀 Revolutionizing Healthcare - Your all-in-one solution for managing OPD queues, real-time bed tracking, and inventory management.**
-
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🌟 Why CareSync?
-** Imagine a world where patients never wait endlessly in OPD queues, hospitals always know their bed availability in real-time, and inventory never runs out of essential supplies. CareSync makes this a reality by integrating AI, real-time data, and predictive analytics to create a seamless experience for patients and healthcare providers.**
+**Imagine a world where patients never wait endlessly in OPD queues, hospitals always know their bed availability in real-time, and inventory never runs out of essential supplies. CareSync makes this a reality by integrating AI, real-time data, and predictive analytics to create a seamless experience for patients and healthcare providers.**
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🚀 Key Features
@@ -44,7 +43,6 @@ Stock Monitoring: Track inventory levels of medicines and consumables.
 - Role-Based Access: Different roles for Doctors, Patients, Receptionists, and Admins.
 - Secure Authentication: Secure login and data encryption for all users.
 - Admin Control: Admins can manage user roles and system settings.
-
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🛠️ Tech Stack
@@ -68,8 +66,7 @@ Stock Monitoring: Track inventory levels of medicines and consumables.
 ### AI/ML 🤖
 - Flask
 - Pandas
-  
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
   
 ## 🛠️ Installation Guide
 🧩 Setup Steps
@@ -125,7 +122,8 @@ npm run dev
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ### 📜 License
-### This project is licensed under the  [MIT License](LICENSE).
+***This project is licensed under the  [MIT License](LICENSE).***
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ### ❤️ If you find this project helpful, please give us a ⭐ and share it with others!
