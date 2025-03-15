@@ -43,6 +43,11 @@ Stock Monitoring: Track inventory levels of medicines and consumables.
 - Role-Based Access: Different roles for Doctors, Patients, Receptionists, and Admins.
 - Secure Authentication: Secure login and data encryption for all users.
 - Admin Control: Admins can manage user roles and system settings.
+
+![Screenshot 2025-03-15 030457](https://github.com/user-attachments/assets/12e31549-5f3a-480c-8f55-a5dc680987b0)
+![Screenshot 2025-03-15 030713](https://github.com/user-attachments/assets/9e31b8f1-273c-4f7b-bed7-8383869eab87)
+![Screenshot 2025-03-15 030735](https://github.com/user-attachments/assets/f99a84f0-860c-45c6-a458-5b29b204c282)
+
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🛠️ Tech Stack
