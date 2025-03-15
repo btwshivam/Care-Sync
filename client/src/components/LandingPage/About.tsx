@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaEye, FaUsers, FaPhoneAlt } from 'react-icons/fa';
 
-const teamMembers = [
-  { src: "https://via.placeholder.com/150", alt: "Team Member 1" },
-  { src: "https://via.placeholder.com/150", alt: "Team Member 2" },
-  { src: "https://via.placeholder.com/150", alt: "Team Member 3" },
-];
+
 
 const AboutUsSection = () => {
   return (
@@ -80,18 +76,6 @@ const AboutUsSection = () => {
           </motion.div>
         </div>
 
-        {/* Team Images */}
-        <div className="flex justify-center mt-12 space-x-6">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="relative w-32 h-32 rounded-full overflow-hidden transition-transform transform hover:scale-110">
-              <img
-                src={member.src}
-                alt={member.alt}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
